@@ -1,0 +1,89 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; }
+
+.container {
+  width: 150px;
+  height: 50px;
+  position: relative;
+  text-align: center;
+  line-height: 50px;
+  text-transform: uppercase;
+  box-shadow: 20px 30px 30px -20px rgba(0, 0, 0, 0.2); }
+  .container:hover {
+    transform: translateY(-2px);
+    box-shadow: 2px 8px 4px -6px rgba(0, 0, 0, 0.3); }
+  .container:hover .border-top,
+  .container:hover .border-bottom {
+    width: 100%;
+    border-image: none; }
+  .container:hover .border-left,
+  .container:hover .border-right {
+    height: 100%;
+    border-image: none; }
+  .container .border-top {
+    position: absolute;
+    top: 0;
+    width: 0;
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, transparent, #000) 3 3;
+    animation: border-top 2s linear 0s infinite; }
+  .container .border-right {
+    position: absolute;
+    right: 0;
+    height: 0;
+    border-right: 3px solid;
+    border-image: linear-gradient(to bottom, #000, transparent) 3 3;
+    animation: border-right 2s linear 1s infinite; }
+  .container .border-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to left, transparent, #000) 3 3;
+    animation: border-bottom 2s linear 0s infinite; }
+  .container .border-left {
+    position: absolute;
+    left: 0;
+    height: 0;
+    border-left: 3px solid;
+    border-image: linear-gradient(to top, transparent, #000) 3 3;
+    animation: border-left 2s linear 1s infinite; }
+
+@keyframes border-top {
+  0% {
+    left: 0; }
+  50% {
+    width: 100%; }
+  100% {
+    left: auto;
+    right: 0; } }
+
+@keyframes border-right {
+  0% {
+    top: 0; }
+  50% {
+    height: 100%; }
+  100% {
+    top: auto;
+    bottom: 0; } }
+
+@keyframes border-bottom {
+  0% {
+    right: 0; }
+  50% {
+    width: 100%; }
+  100% {
+    left: 0;
+    right: auto; } }
+
+@keyframes border-left {
+  0% {
+    bottom: 0; }
+  50% {
+    height: 100%; }
+  100% {
+    bottom: auto;
+    top: 0; } }
